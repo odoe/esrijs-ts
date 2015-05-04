@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel='stylesheet' type='text/css' href='' />
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+        <meta name='viewport' content='initial-scale=1.0 maximum-scale=1.0'>
+        <link href="app/resources/main.css" rel="stylesheet">
+    </head>
+    <body>
+      <div id="searchDiv"></div>
+      <div id="mapDiv"></div>
+      <script>
+        var pathRX = new RegExp(/\/[^\/]+$/);
+        var locationPath = location.pathname.replace(pathRX, '/');
+
+        window.dojoConfig = {
+          isDebug: true,
+          packages: [{
+            name: 'app',
+            location: locationPath + 'app/js'
+          }, {
+            name: 'widgets',
+            location: locationPath + 'app/js/widgets'
+          }]
+        };
+      </script>
+      <script src="http://js.arcgis.com/3.13/"></script>
+      <script>require(['app/main'], function(){});</script>
+    </body>
+</html>
