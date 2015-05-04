@@ -1,5 +1,6 @@
 *.map
 *.js
+!Gruntfile.js
 *.css
 node_modules/*
 bower_components/*
